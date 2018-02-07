@@ -3,6 +3,8 @@ const hbs = require('hbs');
 
 var app = express();
 
+const port = process.env.PORT || 3000;
+
 hbs.registerHelper('getCurrentYear', ()=> {
     return new Date().getFullYear();
 })
@@ -31,6 +33,6 @@ app.get('/about', (req, res)=> {
     });
 });
 
-app.listen(3000, ()=> {
-    console.log('started');
+app.listen(port, ()=> {
+    console.log('server started at', port);
 });
