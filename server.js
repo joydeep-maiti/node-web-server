@@ -33,6 +33,13 @@ app.get('/about', (req, res)=> {
     });
 });
 
+app.get('/projects', (req, res) => {
+    res.render('about.hbs', {
+        pageTitle: 'Projects Page',
+        msg: 'Hey this is my portfolio page'
+    });
+});
+
 app.listen(port, ()=> {
     console.log('server started at', port);
 });
